@@ -34,6 +34,7 @@ fetchBreeds()
     slim();
     refs.select.classList.remove('is-hidden');
     refs.loader.classList.replace('loader', 'is-hidden');
+    
   })
   .catch(onFetchError);
 
@@ -41,6 +42,7 @@ refs.select.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event) {
   refs.loader.classList.replace('is-hidden', 'loader');
+  Notiflix.Notify.info('Loading data, please wait...')
   refs.select.classList.add('is-hidden');
   refs.catInfo.classList.add('is-hidden');
   const breedId = event.currentTarget.value;
